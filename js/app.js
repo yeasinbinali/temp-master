@@ -1,5 +1,12 @@
+const toggleSpinner = displayStyle => {
+    document.getElementById('spinner').style.display = displayStyle;
+}
+
 const searchTemp = () => {
     const tempField = document.getElementById('temp-field');
+
+    toggleSpinner('block');
+
     const tempFieldValue = tempField.value;
     console.log(tempFieldValue);
     tempField.value = '';
@@ -16,12 +23,13 @@ const temperatureInnerText = (id, city) => {
 }
 
 const displayTemp = temperature => {
-    console.log(temperature)
     temperatureInnerText('temp-place', temperature.name);
     temperatureInnerText('temp-degree', temperature.main.temp);
     temperatureInnerText('condition', temperature.weather[0].main);
-    
+
     const iconURL = `http://openweathermap.org/img/wn/${temperature.weather[0].icon}@2x.png`
     const weatherIcon = document.getElementById('weather-icon');
     weatherIcon.setAttribute('src', iconURL);
+
+    toggleSpinner('none');
 }
