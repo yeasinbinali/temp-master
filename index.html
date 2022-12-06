@@ -19,6 +19,11 @@
             display: none;
             margin: auto;
         }
+        #error{
+            display: none;
+            text-align: center;
+            color: ghostwhite;
+        }
     </style>
 </head>
 
@@ -35,13 +40,17 @@
         </form>
         <!-- spinner section -->
         <div id="spinner" class="spinner-border" role="status">
-            <span class="visually-hidden">Loading...</span>
+            <span class="visually-hidden"></span>
+        </div>
+        <!-- error handling -->
+        <div id="error">
+            <h2>No Results Found</h2>
         </div>
         <!-- weather condition -->
         <div id="weather-condition" class="weather-status text-white text-center">
             <img id="weather-icon" src="" alt="">
             <h1 id="temp-place"></h1>
-            <h3><span id="temp-degree">0</span>&deg;C</h3>
+            <h3><span id="temp-degree"></span><span id="celcius"></span></h3>
             <h1 id="condition" class="lead"></h1>
         </div>
     </div>
