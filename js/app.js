@@ -20,4 +20,8 @@ const displayTemp = temperature => {
     temperatureInnerText('temp-place', temperature.name);
     temperatureInnerText('temp-degree', temperature.main.temp);
     temperatureInnerText('condition', temperature.weather[0].main);
+    
+    const iconURL = `http://openweathermap.org/img/wn/${temperature.weather[0].icon}@2x.png`
+    const weatherIcon = document.getElementById('weather-icon');
+    weatherIcon.setAttribute('src', iconURL);
 }
